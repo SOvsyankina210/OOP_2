@@ -1,0 +1,85 @@
+
+//под а
+/*public class Main {
+    public static void main(String[] args){
+        for(int i=0;i<=300;i++){
+            if(i%4==0 && i%6!=0){
+                if(sum(i)<10){
+                    System.out.println(i);
+                }
+            }
+        }
+    }
+    public static int sum(int number){
+        int Sum=0;
+        while(number!=0){
+            Sum+=number%10;
+            number/=10;
+        }
+        return Sum;
+    }
+}
+*/
+//б
+/*
+public class Main{
+    public  static void main(String[] arg){
+        String[] strings={"string","perdole","Unde","bober"};
+        for(String str:strings){
+            if(str.length()%2==0){
+                System.out.println(str+':'+Middle(str));}
+            else{
+                System.out.println(str+':'+"Плохое нечётное слово");
+            }
+        }
+    }
+        public static String Middle(String str){
+            int middle=str.length()/2;
+            return str.substring(middle - 1, middle + 1);
+        }
+    }
+*/
+
+//в
+/*
+public class Main {
+    public static void main(String[] args) {
+        String[] strings = {"string", "perdole", "Unde", "bober"};
+        String shortestWord = Short(strings);
+        System.out.println("\nСлово с минимальной длиной: " + shortestWord);
+    }
+
+    public static String Short(String[] str) {
+        if (str.length == 0) {
+            return "";
+        }
+        String shortestStr = str[0];
+        for (String word : str) {
+            if (word.length() < shortestStr.length()) {
+                shortestStr = word;
+            }
+        }
+        return shortestStr;
+    }
+}
+*/
+
+//г
+public class Main {
+    public static void main(String[] args) {
+        String str = "One two three раз два три one1 two2 123";
+        int latinWordsCount = CLWords(str);
+        System.out.println("Количество слов, содержащих только латинские символы: " + latinWordsCount);
+    }
+
+    public static int CLWords(String str) {
+        String[] words = str.split(" ");
+        int count = 0;
+        for (String word : words) {
+            if (word.matches("[a-zA-Z]+")) {
+                count++;
+            }
+        }
+        return count; 
+    }
+}
