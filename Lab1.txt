@@ -1,52 +1,55 @@
+public class Main {
 
-//под а
-/*public class Main {
-    public static void main(String[] args){
-        for(int i=0;i<=300;i++){
-            if(i%4==0 && i%6!=0){
-                if(sum(i)<10){
+    public static void main(String[] args) {
+        // a)
+        System.out.println("a)");
+        for (int i = 0; i <= 300; i++) {
+            if (i % 4 == 0 && i % 6 != 0) {
+                if (sum(i) < 10) {
                     System.out.println(i);
                 }
             }
         }
+
+        // b)
+        System.out.println("\nb)");
+        String[] strings = {"string", "perdole", "Unde", "bober"};
+        for (String str : strings) {
+            if (str.length() % 2 == 0) {
+                System.out.println(str + ":" + Middle(str));
+            } else {
+                System.out.println(str + ":" + "Плохое нечётное слово");
+            }
+        }
+
+        // c)
+        System.out.println("\nc)");
+        String shortestWord = Short(strings);
+        System.out.println("Слово с минимальной длиной: " + shortestWord);
+
+
+        // d)
+        System.out.println("\nd)");
+        String str = "One two three раз два три one1 two2 123";
+        int latinWordsCount = CLWords(str);
+        System.out.println("Количество слов, содержащих только латинские символы: " + latinWordsCount);
     }
-    public static int sum(int number){
-        int Sum=0;
-        while(number!=0){
-            Sum+=number%10;
-            number/=10;
+
+
+    // Helper methods
+
+    public static int sum(int number) {
+        int Sum = 0;
+        while (number != 0) {
+            Sum += number % 10;
+            number /= 10;
         }
         return Sum;
     }
-}
-*/
-//б
-/*
-public class Main{
-    public  static void main(String[] arg){
-        String[] strings={"string","perdole","Unde","bober"};
-        for(String str:strings){
-            if(str.length()%2==0){
-                System.out.println(str+':'+Middle(str));}
-            else{
-                System.out.println(str+':'+"Плохое нечётное слово");
-            }
-        }
-    }
-        public static String Middle(String str){
-            int middle=str.length()/2;
-            return str.substring(middle - 1, middle + 1);
-        }
-    }
-*/
 
-//в
-/*
-public class Main {
-    public static void main(String[] args) {
-        String[] strings = {"string", "perdole", "Unde", "bober"};
-        String shortestWord = Short(strings);
-        System.out.println("\nСлово с минимальной длиной: " + shortestWord);
+    public static String Middle(String str) {
+        int middle = str.length() / 2;
+        return str.substring(middle - 1, middle + 1);
     }
 
     public static String Short(String[] str) {
@@ -61,16 +64,7 @@ public class Main {
         }
         return shortestStr;
     }
-}
-*/
 
-//г
-public class Main {
-    public static void main(String[] args) {
-        String str = "One two three раз два три one1 two2 123";
-        int latinWordsCount = CLWords(str);
-        System.out.println("Количество слов, содержащих только латинские символы: " + latinWordsCount);
-    }
 
     public static int CLWords(String str) {
         String[] words = str.split(" ");
@@ -80,6 +74,7 @@ public class Main {
                 count++;
             }
         }
-        return count; 
+        return count;
     }
 }
+
